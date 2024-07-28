@@ -17,7 +17,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 export class UserComponent {
   @Input({required:true}) userId!:User;
-  @Output() selectedUser = new EventEmitter();
+  @Output() selectedUserId = new EventEmitter();
   
   //with signal
   // userId = input.required<User>();
@@ -28,7 +28,7 @@ export class UserComponent {
   }
 
   onSelectedUser(){
-    return this.selectedUser.emit(this.userId);
+    return this.selectedUserId.emit(this.userId);
   }
 
 }
