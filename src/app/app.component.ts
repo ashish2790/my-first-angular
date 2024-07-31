@@ -4,7 +4,7 @@ import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 
 import { DUMMY_USERS } from './dummy-users';
-import { User } from './user/user';
+import { User } from './user/user.model';
 import { TasksComponent } from "./tasks/tasks.component";
 
 @Component({
@@ -17,9 +17,9 @@ import { TasksComponent } from "./tasks/tasks.component";
 export class AppComponent {
   title = 'my-first-angular';
   users = DUMMY_USERS;
-  selectedUserID = 'u1';
+  selectedUserID?: string;
 
-  get selectedUserValue(){
+  get selectedUser(){
     return this.users.find(user => user.id === this.selectedUserID)
   }
 
